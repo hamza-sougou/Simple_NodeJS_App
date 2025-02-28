@@ -4,7 +4,7 @@ pipeline {
 		nodejs 'NodeJS'
 	}
 	environment {
-		SONAR_PROJECT_KEY = 'node'
+		SONAR_PROJECT_KEY = 'node-app'
 		SONAR_SCANNER_HOME = tool 'SonarQubeScanner'
 	}
 
@@ -34,7 +34,7 @@ pipeline {
                   				${SONAR_SCANNER_HOME}/bin/sonar-scanner \
                   				-Dsonar.projectKey=${SONAR_PROJECT_KEY} \
                     				-Dsonar.sources=. \
-                   				-Dsonar.host.url=http://192.168.1.128:9000 \
+                   				-Dsonar.host.url=http://localhost:9000 \
                     				-Dsonar.login=${SONAR_TOKEN}
                     				"""
 					}	
